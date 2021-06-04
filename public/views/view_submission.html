@@ -1,0 +1,174 @@
+<b>Token : </b>{{submission.token}}
+<div style="margin-bottom: 15px;"></div>
+<style>
+table, th, td {
+  border: 1px solid #eeeeee;
+  padding: 5px;
+  text-align: center;
+}
+textarea:focus{
+	outline: none
+}
+th{
+	background-color: #f7f7f7;
+}
+td{
+	background-color: #ffffff;
+}
+</style>
+
+<table style="width: 100%">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Time Limit
+        </th>
+        <th>
+            Memory Limit
+        </th>
+        <th>
+            Time
+        </th>
+        <th>
+            Memory
+        </th>
+        <th>
+            Language
+        </th>
+        <th>
+            Verdict
+        </th>
+    </tr>
+    <tr>
+        <td>
+
+        </td>
+        <td>
+        	{{submission.time_limit}}
+        </td>
+        <td>
+        	{{submission.memory_limit}}
+        </td>
+        <td>
+        	{{submission.time}}
+        </td>
+        <td>
+        	{{submission.memory}}
+        </td>
+        <td>
+        	{{submission.language[0].name}}
+        </td>
+        <td>
+            <div ng-if="submission.verdict[0].id == 1">
+                <span class="label label-default">
+                    {{submission.verdict[0].description}}
+                </span>
+            </div>
+            <div ng-if="submission.verdict[0].id == 2">
+                <span class="label label-info">
+                    {{submission.verdict[0].description}}
+                </span>
+            </div>
+            <div ng-if="submission.verdict[0].id == 3">
+                <span class="label label-success">
+                    {{submission.verdict[0].description}}
+                </span>
+            </div>
+            <div ng-if="submission.verdict[0].id == 6">
+                <span class="label label-warning">
+                    {{submission.verdict[0].description}}
+                </span>
+            </div>
+            <div ng-if="submission.verdict[0].id >3 && submission.verdict[0].id != 6">
+                <span class="label label-danger">
+                    {{submission.verdict[0].description}}
+                </span>
+            </div>
+        </td>
+    </tr>
+</table>
+<div style="margin-top: 15px;"></div>
+<b>Checker</b>
+
+<table style="width: 100%">
+    <tr>
+        <th>
+            Checker Type
+        </th>
+        <th>
+            Default Checker
+        </th>
+        <th>
+            Custom Checker
+        </th>
+    </tr>
+    <tr>
+        <td>
+        	{{submission.checker_type}}
+        </td>
+        <td>
+        	{{submission.default_checker}}
+        </td>
+        <td>
+        	<textarea rows="5" cols="25">{{submission.custom_checker}}</textarea>
+        </td>
+    </tr>
+</table>
+
+<div style="margin-top: 15px;"></div>
+<b>Log</b>
+
+<table style="width: 100%">
+    <tr>
+        <th>
+            Checker Log
+        </th>
+        <th>
+            Compiler Log
+        </th>
+    </tr>
+    <tr>
+        <td>
+        	{{submission.checker_log}}
+        </td>
+        <td>
+        	<textarea rows="3" cols="30">{{submission.compiler_log}}</textarea>
+        </td>
+    </tr>
+</table>
+
+<div style="margin-top: 15px;"></div>
+<b>I/O</b>
+
+<table style="width: 100%">
+    <tr>
+        <th>
+            Input
+        </th>
+        <th>
+            Output
+        </th>
+        <th>
+          	Expected Output
+        </th>
+         <th>
+            Source Code
+        </th>
+    </tr>
+    <tr>
+        <td>
+        	<textarea rows="7" cols="25">{{submission.input}}</textarea>
+        </td>
+        <td>
+        	<textarea rows="7" cols="25">{{submission.output}}</textarea>
+        </td>
+        <td>
+        	<textarea rows="7" cols="25">{{submission.expected_output}}</textarea>
+        </td>
+        <td>
+        	<textarea rows="7" cols="25">{{submission.source_code}}</textarea>
+        </td>
+    </tr>
+</table>
